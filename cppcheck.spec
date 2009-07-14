@@ -1,10 +1,11 @@
 Name: cppcheck
-Version: 1.33
+Version: 1.34
 Release: %mkrel 1
 License: GPLv3+
 Group: Development/Other
 Url: http://cppcheck.sourceforge.net/
-Source: %{name}-%{version}.tar.bz2
+Source: http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Patch0:	cppcheck-1.34-cflags.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 BuildRequires: docbook-style-xsl
 BuildRequires: libxslt-proc
@@ -17,9 +18,10 @@ extensions, inline assembly code, etc. Its goal is no false positives.
 
 %prep
 %setup -q
+%patch0 -p1 -b .cflags
 
 %build
-%make
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" %make
 
 # this command line is documented inside cppcheck.1.xml
 cd man
@@ -29,7 +31,7 @@ xsltproc --nonet --param man.charmap.use.subset "0" \
    cppcheck.1.xml
 
 %check
-%make test
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}"  %make test
 
 %install
 rm -rf %{buildroot}
