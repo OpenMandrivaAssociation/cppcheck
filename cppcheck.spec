@@ -1,11 +1,11 @@
 Name: cppcheck
-Version: 1.37
+Version: 1.38
 Release: %mkrel 1
 License: GPLv3+
 Group: Development/Other
 Url: http://cppcheck.sourceforge.net/
 Source: http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
-Patch0:	cppcheck-1.37-cflags.patch
+Patch0:	cppcheck-1.38-cflags.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 BuildRequires: docbook-style-xsl
 BuildRequires: libxslt-proc
