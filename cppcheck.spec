@@ -1,15 +1,15 @@
-Name: cppcheck
-Version: 1.40
-Release: %mkrel 1
-License: GPLv3+
-Group: Development/Other
-Url: http://cppcheck.sourceforge.net/
-Source: http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
-Patch0:	cppcheck-1.40-cflags.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-build
-BuildRequires: docbook-style-xsl
-BuildRequires: libxslt-proc
-Summary: Static analysis tool for C/C++
+Name:		cppcheck
+Version:	1.42
+Release:	%mkrel 1
+License:	GPLv3+
+Group:		Development/Other
+Url:		http://cppcheck.sourceforge.net/
+Source:		http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Patch0:		cppcheck-1.42-cflags.patch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-build
+BuildRequires:	docbook-style-xsl
+BuildRequires:	libxslt-proc
+Summary:	Static analysis tool for C/C++
 
 %description
 This program tries to detect bugs that your C/C++ compiler don't see. Cppcheck
@@ -18,7 +18,7 @@ extensions, inline assembly code, etc. Its goal is no false positives.
 
 %prep
 %setup -q
-%patch0 -p1 -b .cflags
+%patch0 -p0
 
 %build
 CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" %make
