@@ -1,6 +1,6 @@
 Name:		cppcheck
 Version:	1.42
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv3+
 Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
