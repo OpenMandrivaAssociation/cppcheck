@@ -8,6 +8,7 @@ Source:		http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 BuildRequires:	docbook-style-xsl
 BuildRequires:	libxslt-proc
+BuildRequires:  pcre-devel
 Summary:	Static analysis tool for C/C++
 
 %description
