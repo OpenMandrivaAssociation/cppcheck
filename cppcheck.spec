@@ -1,5 +1,5 @@
 Name:		cppcheck
-Version:	1.51
+Version:	1.52
 Release:	%mkrel 1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
