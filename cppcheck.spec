@@ -1,11 +1,11 @@
 Name:		cppcheck
-Version:	1.52
-Release:	%mkrel 1
+Version:	1.53
+Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
-Source:		http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 BuildRequires:	docbook-style-xsl
 BuildRequires:	libxslt-proc
