@@ -1,12 +1,11 @@
 Name:		cppcheck
-Version:	1.53
+Version:	1.54
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 BuildRequires:	docbook-style-xsl
 BuildRequires:	libxslt-proc
 BuildRequires:	pcre-devel
@@ -38,11 +37,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 0644 man/cppcheck.1 %{buildroot}/%{_mandir}/man1
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS readme.txt
 %{_mandir}/man1/cppcheck.1*
 %{_bindir}/cppcheck
