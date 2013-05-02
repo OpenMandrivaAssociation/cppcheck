@@ -11,7 +11,7 @@ Source0:	http://sourceforge.net/projects/%{name}/files/%{name}/%{version}/%{name
 BuildRequires:	docbook-style-xsl
 BuildRequires:	libxslt-proc
 BuildRequires:	pcre-devel
-
+BuildRequires:  tinyxml2-devel	
 %description
 This program tries to detect bugs that your C/C++ compiler don't see. Cppcheck
 is versatile. You can check non-standard code that includes various compiler
@@ -21,7 +21,7 @@ extensions, inline assembly code, etc. Its goal is no false positives.
 %setup -q
 
 %build
-CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" %make HAVE_RULES=yes
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" %make HAVE_RULES=yes TINYXML="-ltinyxml2"
 
 # this command line is documented inside cppcheck.1.xml
 cd man
@@ -31,11 +31,11 @@ xsltproc --nonet --param man.charmap.use.subset "0" \
    cppcheck.1.xml
 
 %check
-CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}"  %make test
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}"  %make HAVE_RULES=yes TINYXML="-ltinyxml2" test
 
 %install
 rm -rf %{buildroot}
-%makeinstall DESTDIR=%{buildroot}
+%makeinstall DESTDIR=%{buildroot} HAVE_RULES=yes TINYXML="-ltinyxml2"
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 0644 man/cppcheck.1 %{buildroot}/%{_mandir}/man1
 
