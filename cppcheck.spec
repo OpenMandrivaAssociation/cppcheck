@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 Name:		cppcheck
 Version:	1.59
 Release:	1
@@ -5,7 +7,7 @@ License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://sourceforge.net/projects/%{name}/files/%{name}/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	docbook-style-xsl
 BuildRequires:	libxslt-proc
 BuildRequires:	pcre-devel
@@ -19,7 +21,7 @@ extensions, inline assembly code, etc. Its goal is no false positives.
 %setup -q
 
 %build
-CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" %make
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" %make HAVE_RULES=yes
 
 # this command line is documented inside cppcheck.1.xml
 cd man
