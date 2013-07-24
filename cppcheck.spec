@@ -9,7 +9,7 @@ Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
 Source0:	http://sourceforge.net/projects/%{name}/files/%{name}/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	docbook-style-xsl
-BuildRequires:	libxslt-proc
+BuildRequires:	xsltproc
 BuildRequires:	pcre-devel
 BuildRequires:  tinyxml2-devel	
 %description
