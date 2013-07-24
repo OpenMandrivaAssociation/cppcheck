@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 Name:		cppcheck
-Version:	1.59
+Version:	1.60.1
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
