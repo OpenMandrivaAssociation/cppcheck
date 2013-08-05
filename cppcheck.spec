@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 Name:		cppcheck
-Version:	1.60.1
+Version:	1.61
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
@@ -21,7 +21,7 @@ extensions, inline assembly code, etc. Its goal is no false positives.
 %setup -q
 
 %build
-CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" %make HAVE_RULES=yes TINYXML="-ltinyxml2"
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX=%{__cxx} %make HAVE_RULES=yes TINYXML="-ltinyxml2"
 
 # this command line is documented inside cppcheck.1.xml
 cd man

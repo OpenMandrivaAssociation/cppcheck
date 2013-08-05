@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   cppcheck-1.60.1.tar.bz2: 282e74459747d6c940fa65376049cb642cd32e6a
+sources:
+  cppcheck-1.61.tar.bz2: fd81635612ba74a90b0ebe6d4c8a520826cc077c
