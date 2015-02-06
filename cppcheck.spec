@@ -2,7 +2,7 @@
 
 Name:		cppcheck
 Version:	1.61
-Release:	1
+Release:	2
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
