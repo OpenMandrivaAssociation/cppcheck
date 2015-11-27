@@ -31,7 +31,7 @@ xsltproc --nonet --param man.charmap.use.subset "0" \
    cppcheck.1.xml
 
 %check
-CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}"  %make HAVE_RULES=yes TINYXML="-ltinyxml2" test
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" %make HAVE_RULES=yes TINYXML="-ltinyxml2" test
 
 %install
 rm -rf %{buildroot}
