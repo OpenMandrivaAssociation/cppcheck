@@ -43,4 +43,4 @@ install -m 0644 man/cppcheck.1 %{buildroot}/%{_mandir}/man1
 %doc AUTHORS readme.txt
 %{_mandir}/man1/cppcheck.1*
 %{_bindir}/cppcheck
-%{_bindir}/cppcheck-html-report
+%{_bindir}/cppcheck-htmlreport
