@@ -1,8 +1,8 @@
 %define _disable_ld_no_undefined 1
 
 Name:		cppcheck
-Version:	1.71
-Release:	2
+Version:	1.82
+Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
@@ -34,10 +34,11 @@ xsltproc --nonet --param man.charmap.use.subset "0" \
 CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" %make HAVE_RULES=yes TINYXML="-ltinyxml2" test
 
 %install
-rm -rf %{buildroot}
 %makeinstall DESTDIR=%{buildroot} HAVE_RULES=yes TINYXML="-ltinyxml2"
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 0644 man/cppcheck.1 %{buildroot}/%{_mandir}/man1
+
+rm -f %{buildroot}%{_bindir}/*.py
 
 %files
 %doc AUTHORS readme.txt
