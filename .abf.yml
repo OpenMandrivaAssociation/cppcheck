@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   cppcheck-1.83.tar.gz: 23d7fa879301d625e2276c46fee314dcaff4117e
+sources:
+  cppcheck-1.84.tar.bz2: 552f4132318b63450c4d8078ffc8c6baf1b2cb33
