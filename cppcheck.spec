@@ -1,7 +1,7 @@
 %define _disable_ld_no_undefined 1
 
 Name:		cppcheck
-Version:	1.84
+Version:	1.86
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
@@ -46,3 +46,4 @@ rm -f %{buildroot}%{_bindir}/*.py
 %{_mandir}/man1/cppcheck.1*
 %{_bindir}/cppcheck
 %{_bindir}/cppcheck-htmlreport
+%{_datadir}/%{name}
