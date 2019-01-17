@@ -7,7 +7,7 @@ License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/sourceforge/cppcheck/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/sourceforge/cppcheck/%{name}-%{version}.tar.gz
 BuildRequires:	docbook-style-xsl
 BuildRequires:	xsltproc
 BuildRequires:	pcre-devel
