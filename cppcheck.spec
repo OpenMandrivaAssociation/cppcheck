@@ -46,4 +46,3 @@ rm -f %{buildroot}%{_bindir}/*.py
 %{_mandir}/man1/cppcheck.1*
 %{_bindir}/cppcheck
 %{_bindir}/cppcheck-htmlreport
-%{_datadir}/%{name}
