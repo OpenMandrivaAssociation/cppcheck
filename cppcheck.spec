@@ -1,13 +1,14 @@
 %define _disable_ld_no_undefined 1
 
+
 Name:		cppcheck
-Version:	1.88
+Version:	2.6
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/sourceforge/cppcheck/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/sourceforge/cppcheck/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	docbook-style-xsl
 BuildRequires:	xsltproc
 BuildRequires:	pcre-devel
@@ -22,7 +23,7 @@ extensions, inline assembly code, etc. Its goal is no false positives.
 %setup -q
 
 %build
-CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" %make HAVE_RULES=yes TINYXML="-ltinyxml2"
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" %make HAVE_RULES=yes TINYXML="-ltinyxml2" FILESDIR=%{_datadir}/cppcheck
 
 # this command line is documented inside cppcheck.1.xml
 cd man
@@ -35,7 +36,7 @@ xsltproc --nonet --param man.charmap.use.subset "0" \
 CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" make HAVE_RULES=yes TINYXML="-ltinyxml2" test
 
 %install
-%makeinstall_std DESTDIR=%{buildroot} HAVE_RULES=yes TINYXML="-ltinyxml2"
+%makeinstall_std DESTDIR=%{buildroot} HAVE_RULES=yes TINYXML="-ltinyxml2" FILESDIR=%{_datadir}/cppcheck
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 0644 man/cppcheck.1 %{buildroot}/%{_mandir}/man1
 
@@ -46,3 +47,4 @@ rm -f %{buildroot}%{_bindir}/*.py
 %{_mandir}/man1/cppcheck.1*
 %{_bindir}/cppcheck
 %{_bindir}/cppcheck-htmlreport
+%{_datadir}/cppcheck
