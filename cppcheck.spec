@@ -2,13 +2,13 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		cppcheck
-Version:	2.6
+Version:	2.6.3
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
 Group:		Development/Other
 Url:		http://cppcheck.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/sourceforge/cppcheck/%{version}/%{name}-%{version}.tar.bz2
+Source0:	https://github.com/danmar/cppcheck/archive/refs/tags/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	docbook-style-xsl
 BuildRequires:	xsltproc
 BuildRequires:	pcre-devel
