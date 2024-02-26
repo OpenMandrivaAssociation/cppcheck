@@ -13,6 +13,7 @@ BuildRequires:	docbook-style-xsl
 BuildRequires:	xsltproc
 BuildRequires:	pcre-devel
 BuildRequires:	tinyxml2-devel
+BuildRequires:	which
 
 %description
 This program tries to detect bugs that your C/C++ compiler don't see. Cppcheck
@@ -20,10 +21,10 @@ is versatile. You can check non-standard code that includes various compiler
 extensions, inline assembly code, etc. Its goal is no false positives.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" %make HAVE_RULES=yes TINYXML="-ltinyxml2" FILESDIR=%{_datadir}/cppcheck
+CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" %make_build HAVE_RULES=yes TINYXML="-ltinyxml2" FILESDIR=%{_datadir}/cppcheck
 
 # this command line is documented inside cppcheck.1.xml
 cd man
@@ -36,7 +37,7 @@ xsltproc --nonet --param man.charmap.use.subset "0" \
 CXXFLAGS="%{optflags}" LDFLAGS="%{ldflags}" CXX="%{__cxx} -std=c++11" make HAVE_RULES=yes TINYXML="-ltinyxml2" test
 
 %install
-%makeinstall_std DESTDIR=%{buildroot} HAVE_RULES=yes TINYXML="-ltinyxml2" FILESDIR=%{_datadir}/cppcheck
+%makeinstall DESTDIR=%{buildroot} HAVE_RULES=yes TINYXML="-ltinyxml2" FILESDIR=%{_datadir}/cppcheck
 mkdir -p %{buildroot}%{_mandir}/man1
 install -m 0644 man/cppcheck.1 %{buildroot}/%{_mandir}/man1
 
