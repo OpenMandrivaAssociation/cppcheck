@@ -2,7 +2,7 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		cppcheck
-Version:	2.13.4
+Version:	2.14.0
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
