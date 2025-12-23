@@ -2,7 +2,7 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		cppcheck
-Version:	2.17.1
+Version:	2.19.0
 Release:	1
 License:	GPLv3+
 Summary:	Static analysis tool for C/C++
@@ -14,6 +14,7 @@ BuildRequires:	xsltproc
 BuildRequires:	pcre-devel
 BuildRequires:	tinyxml2-devel
 BuildRequires:	which
+BuildRequires:	make
 
 %description
 This program tries to detect bugs that your C/C++ compiler don't see. Cppcheck
